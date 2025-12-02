@@ -2,7 +2,12 @@ import type { Config } from "tailwindcss";
 
 export default {
   darkMode: ["class"],
-  content: ["./pages/**/*.{ts,tsx}", "./components/**/*.{ts,tsx}", "./app/**/*.{ts,tsx}", "./src/**/*.{ts,tsx}"],
+  content: [
+    "./pages/**/*.{ts,tsx}",
+    "./components/**/*.{ts,tsx}",
+    "./app/**/*.{ts,tsx}",
+    "./src/**/*.{ts,tsx}",
+  ],
   prefix: "",
   theme: {
     container: {
@@ -53,21 +58,21 @@ export default {
         cream: "hsl(var(--soft-cream))",
       },
       backgroundImage: {
-        'gradient-hero': 'var(--gradient-hero)',
-        'gradient-card': 'var(--gradient-card)',
-        'gradient-accent': 'var(--gradient-accent)',
+        "gradient-hero": "var(--gradient-hero)",
+        "gradient-card": "var(--gradient-card)",
+        "gradient-accent": "var(--gradient-accent)",
       },
       boxShadow: {
-        'glow': 'var(--shadow-glow)',
-        'elegant': 'var(--shadow-elegant)',
-        'gold': 'var(--shadow-gold)',
+        glow: "var(--shadow-glow)",
+        elegant: "var(--shadow-elegant)",
+        gold: "var(--shadow-gold)",
       },
       transitionProperty: {
-        'smooth': 'var(--transition-smooth)',
+        smooth: "var(--transition-smooth)",
       },
       fontFamily: {
-        'display': ['Playfair Display', 'serif'],
-        'body': ['Inter', 'sans-serif'],
+        display: ["Playfair Display", "serif"],
+        body: ["Inter", "sans-serif"],
       },
       borderRadius: {
         lg: "var(--radius)",
