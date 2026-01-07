@@ -1,8 +1,19 @@
-import { Phone, ShoppingCart, Menu, Crown, ShoppingBag, Info, Star, Calendar, BookOpen, MessageSquare, X } from "lucide-react";
+import {
+  Phone,
+  ShoppingCart,
+  Menu,
+  Crown,
+  ShoppingBag,
+  Info,
+  Star,
+  Calendar,
+  BookOpen,
+  MessageSquare,
+  X,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
 import { useCart } from "@/context/CartContext";
 
 const Header = () => {
@@ -96,6 +107,13 @@ const Header = () => {
                 <span>Book</span>
               </Link>
               <Link
+                to="/loyalty"
+                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
+              >
+                <Crown className="w-4 h-4 group-hover/link:text-gold transition-colors" />
+                <span>Royal Rewards</span>
+              </Link>
+              <Link
                 to="/resources"
                 className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
@@ -150,7 +168,9 @@ const Header = () => {
           <div className="absolute top-4 left-4 z-50">
             <div className="flex items-center gap-2">
               <Crown className="h-6 w-6 text-gold" />
-              <span className="font-display font-bold text-lg">Dhee's Organic</span>
+              <span className="font-display font-bold text-lg">
+                Dhee's Organic
+              </span>
             </div>
           </div>
 
@@ -214,8 +234,15 @@ const Header = () => {
             </nav>
 
             <div className="w-full max-w-xs mt-4">
-              <Button asChild size="lg" className="w-full h-12 text-lg" variant="hero">
-                <Link to="/products" onClick={() => setMobileMenuOpen(false)}>Shop Now</Link>
+              <Button
+                asChild
+                size="lg"
+                className="w-full h-12 text-lg"
+                variant="hero"
+              >
+                <Link to="/products" onClick={() => setMobileMenuOpen(false)}>
+                  Shop Now
+                </Link>
               </Button>
             </div>
 
