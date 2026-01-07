@@ -15,7 +15,7 @@ export const products = [
         id: 2,
         name: "Deep Conditioning Treatment",
         price: "N 300",
-        description: "Intensive repair for damaged and dry hair",
+        description: "Natural Intensive repair for damaged and dry hair",
         benefits: ["Repairs split ends", "Restores moisture", "Strengthens hair"],
         image: "https://images.unsplash.com/photo-1522337660859-02fbefca4702?auto=format&fit=crop&w=600&q=80",
         category: "Treatments",
@@ -39,7 +39,7 @@ export const products = [
         category: "Treatment",
         price: 450,
         image: "https://images.unsplash.com/photo-1559599101-f09722fb4948?w=800&q=80",
-        description: "Intensive repair for damaged and dry hair",
+        description: "Promotes growth and repair for damaged and dry hair",
         benefits: ["Repairs split ends", "Restores moisture", "Strengthens hair"],
         rating: 4.7,
         reviews: 210
