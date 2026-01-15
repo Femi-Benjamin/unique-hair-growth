@@ -123,6 +123,17 @@ const Footer = () => {
             </div>
           </div>
 
+          {/* Royal Rewards */}
+          <div>
+            <h4 className="font-semibold text-foreground mb-4">Royal Rewards</h4>
+            <p className="text-sm text-muted-foreground mb-4">
+              Join our exclusive loyalty program and earn points on every purchase. Unlock special rewards and benefits.
+            </p>
+            <Button asChild variant="hero" size="sm">
+              <Link to="/loyalty">Join Now</Link>
+            </Button>
+          </div>
+
           {/* Newsletter */}
           <div className="hidden lg:block">
             <h4 className="font-semibold text-foreground mb-4">Newsletter</h4>

@@ -33,15 +33,18 @@ const Hero = () => {
   }, [shouldLoadBg]);
 
   return (
-    <section ref={heroRef} className="relative min-h-[90vh] flex items-center justify-center overflow-hidden">
+    <section
+      ref={heroRef}
+      className="relative min-h-[90vh] flex items-center justify-center overflow-hidden"
+    >
       {/* Background Image with lazy-load + overlay */}
       <div
-        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${bgLoaded ? 'opacity-100' : 'opacity-0'}`}
+        className={`absolute inset-0 bg-cover bg-center transition-opacity duration-700 ${
+          bgLoaded ? "opacity-100" : "opacity-0"
+        }`}
         aria-hidden
         style={{
-          backgroundImage: bgLoaded
-            ? `url(${dheesImage})`
-            : undefined,
+          backgroundImage: bgLoaded ? `url(${dheesImage})` : undefined,
         }}
       >
         <style>{`
@@ -56,7 +59,13 @@ const Hero = () => {
             }
           }
         `}</style>
-        <div id="hero-bg" className="absolute inset-0 w-full h-full bg-cover bg-center" style={{ backgroundImage: bgLoaded ? `url(${dheesImage})` : undefined }}></div>
+        <div
+          id="hero-bg"
+          className="absolute inset-0 w-full h-full bg-cover bg-center"
+          style={{
+            backgroundImage: bgLoaded ? `url(${dheesImage})` : undefined,
+          }}
+        ></div>
         <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/60"></div>
       </div>
 
@@ -64,13 +73,14 @@ const Hero = () => {
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-3xl">
           <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
-            RESTORE YOUR CROWN WITH{' '}
-            <span className="text-primary drop-shadow-glow">ORGANIC</span>{' '}
-            HAIR CARE
+            RESTORE YOUR CROWN WITH{" "}
+            <span className="text-primary drop-shadow-glow">ORGANIC</span> HAIR
+            CARE
           </h1>
 
           <p className="text-xl sm:text-2xl text-cream/90 mb-8 max-w-2xl">
-            100% Chemical-free treatments designed to promote natural growth, strength, and shine. Experience the royal standard of hair health.
+            100% Chemical-free treatments designed to promote natural growth,
+            strength, and shine. Experience the royal standard of hair health.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4">

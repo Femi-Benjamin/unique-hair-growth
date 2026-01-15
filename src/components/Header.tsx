@@ -108,13 +108,6 @@ const Header = () => {
                 <span>Book</span>
               </Link>
               <Link
-                to="/loyalty"
-                className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
-              >
-                <Crown className="w-4 h-4 group-hover/link:text-gold transition-colors" />
-                <span>Royal Rewards</span>
-              </Link>
-              <Link
                 to="/resources"
                 className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth group/link"
               >
@@ -227,14 +220,6 @@ const Header = () => {
               >
                 <Calendar className="w-6 h-6" />
                 Book Consultation
-              </Link>
-              <Link
-                to="/loyalty"
-                className="flex items-center justify-center gap-3 text-2xl font-display font-medium text-foreground hover:text-primary transition-colors py-2 border-b border-border/50"
-                onClick={() => setMobileMenuOpen(false)}
-              >
-                <Crown className="w-6 h-6" />
-                Royal Rewards
               </Link>
               <button
                 onClick={() => {

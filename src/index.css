@@ -68,3 +68,13 @@ All colors MUST be HSL.
     @apply bg-background text-foreground;
   }
 }
+
+body::-webkit-scrollbar,
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body,
+html {
+  scroll-behavior: smooth;
+}
