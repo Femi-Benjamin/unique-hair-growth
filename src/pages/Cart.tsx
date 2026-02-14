@@ -283,7 +283,7 @@ You will receive a confirmation email shortly.`);
                 <div className="space-y-3">
                   <Button
                     size="lg"
-                    className="w-full bg-green-600 hover:bg-green-700 text-white font-semibold"
+                    className="w-full bg-primary hover:bg-primary/80 text-white font-semibold"
                     onClick={handleCheckout}
                   >
                     Proceed to Checkout
