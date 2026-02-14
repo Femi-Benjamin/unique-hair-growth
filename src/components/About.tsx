@@ -1,5 +1,5 @@
 import { Crown, Leaf, ShieldCheck } from "lucide-react";
-import aboutImage from "@/assets/dhees.jpeg"; // Reusing an existing image for now, user might want to swap
+import aboutImage from "@/assets/testimonial-woman.jpg"; // Reusing an existing image for now, user might want to swap
 
 const About = () => {
   return (
@@ -16,7 +16,7 @@ const About = () => {
             <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
               <img
                 src={aboutImage}
-                alt="Dhee's Organic Founder"
+                alt="Unique Founder"
                 className="w-full h-auto object-cover"
               />
             </div>
@@ -38,8 +38,9 @@ const About = () => {
 
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
-                At Dhee's Royal Growth, we believe that your hair is your crown
-                and it deserves to be treated with the utmost respect and care.
+                At Unique Hair Treatment, we believe that your hair is your
+                crown and it deserves to be treated with the utmost respect and
+                care.
               </p>
               <p>
                 Founded with a passion for natural healing and organic beauty,

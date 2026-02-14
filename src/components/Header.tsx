@@ -28,15 +28,15 @@ const Header = () => {
         <div className="container mx-auto px-4 py-2 flex justify-between items-center text-sm">
           <div className="flex gap-4 items-center">
             <a
-              href="tel:0814437-4707"
+              href="tel:07054405537"
               className="flex items-center gap-2 text-foreground hover:text-primary transition-smooth"
             >
               <Phone className="h-4 w-4" />
-              <span className="hidden sm:inline">0814 437 4707</span>
+              <span className="hidden sm:inline">0705 440 5537</span>
             </a>
             <span className="text-muted-foreground hidden sm:inline">|</span>
             <a
-              href="https://wa.me/27814437-4707"
+              href="https://wa.me/2347054405537"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center gap-2 text-primary hover:text-primary/80 transition-smooth"
@@ -71,7 +71,7 @@ const Header = () => {
               </div>
               <div>
                 <h1 className="text-xl font-display font-bold text-foreground group-hover:text-primary transition-smooth">
-                  Dhee's Organic
+                  Unique
                 </h1>
                 <p className="text-xs text-muted-foreground">Hair Treatment</p>
               </div>
@@ -162,9 +162,7 @@ const Header = () => {
           <div className="absolute top-4 left-4 z-50">
             <div className="flex items-center gap-2">
               <Crown className="h-6 w-6 text-gold" />
-              <span className="font-display font-bold text-lg">
-                Dhee's Organic
-              </span>
+              <span className="font-display font-bold text-lg">Unique</span>
             </div>
           </div>
 

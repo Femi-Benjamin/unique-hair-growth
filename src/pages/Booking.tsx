@@ -79,31 +79,33 @@ const Booking = () => {
   };
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-charcoal text-cream flex flex-col">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-2xl mx-auto">
           <h1 className="font-display text-3xl md:text-4xl font-bold mb-4 text-center">
             Book Your Appointment
           </h1>
-          <p className="text-muted-foreground text-center mb-8">
+          <p className="text-cream/70 text-center mb-8">
             Fill out the form below to schedule your visit or virtual
             consultation.
           </p>
 
           <form
             onSubmit={handleSubmit}
-            className="space-y-6 bg-card border border-border p-6 md:p-8 rounded-xl shadow-sm"
+            className="space-y-6 bg-white/5 border border-cream/20 p-6 md:p-8 rounded-xl shadow-sm backdrop-blur-sm"
           >
             <div className="space-y-2">
-              <Label htmlFor="service">Service Required *</Label>
+              <Label htmlFor="service" className="text-cream">
+                Service Required *
+              </Label>
               <Select
                 onValueChange={(val) =>
                   setFormData({ ...formData, service: val })
                 }
                 required
               >
-                <SelectTrigger>
+                <SelectTrigger className="bg-white/10 border-cream/20 text-cream">
                   <SelectValue placeholder="Select a service" />
                 </SelectTrigger>
                 <SelectContent>
@@ -118,14 +120,14 @@ const Booking = () => {
 
             <div className="grid md:grid-cols-2 gap-6 ">
               <div className="space-y-2">
-                <Label>Preferred Date *</Label>
+                <Label className="text-cream">Preferred Date *</Label>
                 <Popover>
                   <PopoverTrigger asChild>
                     <Button
                       variant={"outline"}
                       className={cn(
-                        "w-full justify-start text-left font-normal border border-border",
-                        !date && "text-muted-foreground"
+                        "w-full justify-start text-left font-normal bg-white/10 border-cream/20 text-cream hover:bg-white/15",
+                        !date && "text-cream/50",
                       )}
                     >
                       <CalendarIcon className="mr-2 h-4 w-4" />
@@ -147,13 +149,15 @@ const Booking = () => {
               </div>
 
               <div className="space-y-2">
-                <Label htmlFor="time">Preferred Time</Label>
+                <Label htmlFor="time" className="text-cream">
+                  Preferred Time
+                </Label>
                 <Select
                   onValueChange={(val) =>
                     setFormData({ ...formData, time: val })
                   }
                 >
-                  <SelectTrigger>
+                  <SelectTrigger className="bg-white/10 border-cream/20 text-cream">
                     <SelectValue placeholder="Select time" />
                   </SelectTrigger>
                   <SelectContent>
@@ -169,10 +173,13 @@ const Booking = () => {
 
             <div className="grid md:grid-cols-2 gap-6">
               <div className="space-y-2">
-                <Label htmlFor="name">Full Name *</Label>
+                <Label htmlFor="name" className="text-cream">
+                  Full Name *
+                </Label>
                 <Input
                   id="name"
                   placeholder="John Doe"
+                  className="bg-white/10 border-cream/20 text-cream placeholder:text-cream/40"
                   value={formData.name}
                   onChange={(e) =>
                     setFormData({ ...formData, name: e.target.value })
@@ -181,10 +188,13 @@ const Booking = () => {
                 />
               </div>
               <div className="space-y-2">
-                <Label htmlFor="phone">Phone Number *</Label>
+                <Label htmlFor="phone" className="text-cream">
+                  Phone Number *
+                </Label>
                 <Input
                   id="phone"
                   placeholder="081 234 5678"
+                  className="bg-white/10 border-cream/20 text-cream placeholder:text-cream/40"
                   value={formData.phone}
                   onChange={(e) =>
                     setFormData({ ...formData, phone: e.target.value })
@@ -195,11 +205,14 @@ const Booking = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="email">Email Address (Optional)</Label>
+              <Label htmlFor="email" className="text-cream">
+                Email Address (Optional)
+              </Label>
               <Input
                 id="email"
                 type="email"
                 placeholder="john@example.com"
+                className="bg-white/10 border-cream/20 text-cream placeholder:text-cream/40"
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
@@ -208,7 +221,9 @@ const Booking = () => {
             </div>
 
             <div className="space-y-2">
-              <Label htmlFor="notes">Additional Notes</Label>
+              <Label htmlFor="notes" className="text-cream">
+                Additional Notes
+              </Label>
               <Textarea
                 id="notes"
                 placeholder="Any specific hair concerns or questions?"
@@ -216,13 +231,13 @@ const Booking = () => {
                 onChange={(e) =>
                   setFormData({ ...formData, notes: e.target.value })
                 }
-                className="min-h-[100px]"
+                className="min-h-[100px] bg-white/10 border-cream/20 text-cream placeholder:text-cream/40"
               />
             </div>
 
             <Button
               type="submit"
-              className="w-full"
+              className="w-full bg-gold hover:bg-gold/90 text-charcoal font-bold"
               size="lg"
               disabled={isSubmitting}
             >

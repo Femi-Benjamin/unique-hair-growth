@@ -81,7 +81,7 @@ Protective styling involves hairstyles that tuck away your hair ends and reduce 
 - Avoid heavy products that build up
 - Take breaks between styles to let your hair breathe
 
-Protective styling combined with quality products like Dhee's Royal Growth Oil creates the perfect environment for healthy hair growth!`,
+Protective styling combined with quality products like Unique Royal Growth Oil creates the perfect environment for healthy hair growth!`,
   },
   {
     id: "scalp-health",
@@ -109,7 +109,7 @@ Your scalp is the ecosystem where hair grows. Just like you wouldn't expect plan
 4. **Hydration** - Keep your scalp moisturized with water and oils
 5. **Minimize Heat** - Reduce heat exposure to prevent scalp irritation
 
-**The Dhee's Advantage:**
+**The Unique Advantage:**
 Our products are specifically formulated with Chebe powder, hemp seed oil, and essential vitamins to address common scalp concerns naturally. Regular use promotes a healthy scalp ecosystem that supports vibrant hair growth.
 
 Invest in your scalp, and your hair will thank you!`,
@@ -120,7 +120,7 @@ const Resources = () => {
   const [selectedArticle, setSelectedArticle] = useState<Article | null>(null);
 
   return (
-    <div className="min-h-screen bg-background flex flex-col">
+    <div className="min-h-screen bg-charcoal text-cream flex flex-col">
       <Header />
       <main className="flex-grow container mx-auto px-4 py-8">
         <div className="max-w-5xl mx-auto">
@@ -192,7 +192,7 @@ const Resources = () => {
                   Are your products suitable for all hair types?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Yes! Dhee's Organic products are formulated to be safe and
+                  Yes! Unique Organic products are formulated to be safe and
                   effective for all hair textures, from straight to 4C coils.
                 </AccordionContent>
               </AccordionItem>
@@ -215,10 +215,10 @@ const Resources = () => {
               </AccordionItem>
               <AccordionItem value="item-5">
                 <AccordionTrigger>
-                  What makes Dhee's products different?
+                  What makes Unique's products different?
                 </AccordionTrigger>
                 <AccordionContent>
-                  Dhee's Royal Growth uses 100% organic, chemical-free
+                  Unique Royal Growth uses 100% organic, chemical-free
                   ingredients including Chebe powder, hemp seed oil, and
                   essential vitamins. Each product is hand-blended with
                   ethically sourced ingredients for maximum potency.

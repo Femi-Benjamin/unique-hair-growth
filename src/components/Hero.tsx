@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import dheesImage from "@/assets/dhees.jpeg";
+
 import heroMobileImage from "@/assets/hero-products.jpg";
 import { useEffect, useRef, useState } from "react";
 import { smoothScrollToSection } from "@/lib/scroll";
@@ -18,7 +18,7 @@ const Hero = () => {
           if (entry.isIntersecting) setShouldLoadBg(true);
         });
       },
-      { rootMargin: "200px" }
+      { rootMargin: "200px" },
     );
 
     observer.observe(heroRef.current);
@@ -28,7 +28,7 @@ const Hero = () => {
   useEffect(() => {
     if (!shouldLoadBg) return;
     const img = new Image();
-    img.src = dheesImage;
+    img.src = heroMobileImage;
     img.onload = () => setBgLoaded(true);
   }, [shouldLoadBg]);
 
@@ -44,35 +44,23 @@ const Hero = () => {
         }`}
         aria-hidden
         style={{
-          backgroundImage: bgLoaded ? `url(${dheesImage})` : undefined,
+          backgroundImage: bgLoaded ? `url(${heroMobileImage})` : undefined,
         }}
       >
-        <style>{`
-          @media (max-width: 640px) {
-            #hero-bg {
-              background-image: url(${heroMobileImage}) !important;
-            }
-          }
-          @media (min-width: 641px) {
-            #hero-bg {
-              background-image: url(${dheesImage}) !important;
-            }
-          }
-        `}</style>
         <div
           id="hero-bg"
           className="absolute inset-0 w-full h-full bg-cover bg-center"
           style={{
-            backgroundImage: bgLoaded ? `url(${dheesImage})` : undefined,
+            backgroundImage: bgLoaded ? `url(${heroMobileImage})` : undefined,
           }}
         ></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-charcoal/60"></div>
+        {/* <div className="absolute inset-0 bg-gradient-to-r from-[hsl(280,25%,18%)]/90 via-[hsl(280,25%,18%)]/70 to-[hsl(280,20%,25%)]/50"></div> */}
       </div>
 
       {/* Content */}
       <div className="relative z-10 container mx-auto px-4 py-20">
         <div className="max-w-3xl">
-          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-foreground mb-6 leading-tight">
+          <h1 className="font-display text-5xl sm:text-6xl lg:text-7xl font-bold text-primary mb-6 leading-tight">
             RESTORE YOUR CROWN WITH{" "}
             <span className="text-primary drop-shadow-glow">ORGANIC</span> HAIR
             CARE

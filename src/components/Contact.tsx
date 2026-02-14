@@ -37,14 +37,14 @@ const Contact = () => {
                   <Phone className="text-gold w-6 h-6 mt-1" />
                   <div>
                     <h5 className="font-bold text-cream">Phone</h5>
-                    <p className="text-cream/70">0814 437 4707</p>
+                    <p className="text-cream/70">0705 440 5537</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">
                   <Mail className="text-gold w-6 h-6 mt-1" />
                   <div>
                     <h5 className="font-bold text-cream">Email</h5>
-                    <p className="text-cream/70">info@dheesorganic.co.za</p>
+                    <p className="text-cream/70">info@uniquehair.co.za</p>
                   </div>
                 </div>
                 <div className="flex items-start gap-4">

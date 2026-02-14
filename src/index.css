@@ -8,51 +8,52 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 0 0% 7%;
-    --foreground: 40 20% 95%;
+    /* Premium Plum / Rose Gold / Warm Cream Theme */
+    --background: 30 25% 97%;        /* Warm ivory/cream */
+    --foreground: 280 25% 18%;       /* Deep plum for text */
 
-    --card: 0 0% 10%;
-    --card-foreground: 40 20% 95%;
+    --card: 30 20% 99%;              /* Near-white with warmth */
+    --card-foreground: 280 25% 18%;
 
-    --popover: 0 0% 8%;
-    --popover-foreground: 40 20% 95%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 25% 18%;
 
-    --primary: 158 64% 52%;
+    --primary: 280 35% 42%;          /* Rich plum/purple */
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 40 20% 95%;
+    --secondary: 280 15% 93%;        /* Subtle lavender tint */
+    --secondary-foreground: 280 25% 18%;
 
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 60%;
+    --muted: 280 8% 94%;
+    --muted-foreground: 280 10% 45%;
 
-    --accent: 45 100% 51%;
-    --accent-foreground: 0 0% 10%;
+    --accent: 15 55% 60%;            /* Rose gold accent */
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 0 0% 20%;
-    --input: 0 0% 20%;
-    --ring: 158 64% 52%;
+    --border: 280 12% 90%;
+    --input: 280 12% 90%;
+    --ring: 280 35% 42%;
 
     --radius: 0.75rem;
 
-    /* Custom theme colors */
-    --royal-gold: 45 100% 51%;
-    --organic-green: 158 64% 52%;
-    --deep-charcoal: 0 0% 7%;
-    --soft-cream: 40 20% 95%;
+    /* Custom theme colors — token names kept for Tailwind compatibility */
+    --royal-gold: 15 55% 60%;        /* Rose gold */
+    --organic-green: 280 35% 42%;    /* Maps to primary plum */
+    --deep-charcoal: 280 25% 18%;    /* Deep plum (used as dark bg) */
+    --soft-cream: 30 25% 97%;        /* Warm cream */
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(0 0% 10%) 0%, hsl(158 64% 12%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(0 0% 12%) 0%, hsl(0 0% 8%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(158 64% 52%) 0%, hsl(158 64% 42%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(280 20% 95%) 0%, hsl(280 15% 90%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(30 20% 99%) 0%, hsl(280 10% 97%) 100%);
+    --gradient-accent: linear-gradient(90deg, hsl(280 35% 42%) 0%, hsl(280 30% 52%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(158 64% 52% / 0.3);
-    --shadow-elegant: 0 10px 40px hsl(0 0% 0% / 0.5);
-    --shadow-gold: 0 0 30px hsl(45 100% 51% / 0.2);
+    --shadow-glow: 0 0 40px hsl(280 35% 42% / 0.15);
+    --shadow-elegant: 0 10px 40px hsl(280 25% 18% / 0.08);
+    --shadow-gold: 0 0 30px hsl(15 55% 60% / 0.2);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);

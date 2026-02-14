@@ -9,7 +9,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Load from local storage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("dhees-cart");
+    const savedCart = localStorage.getItem("unique-cart");
     if (savedCart) {
       try {
         setItems(JSON.parse(savedCart));
@@ -21,7 +21,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Save to local storage on change
   useEffect(() => {
-    localStorage.setItem("dhees-cart", JSON.stringify(items));
+    localStorage.setItem("unique-cart", JSON.stringify(items));
   }, [items]);
 
   const addToCart = (product: Product) => {
@@ -39,7 +39,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         return prev.map((item) =>
           item.id === product.id
             ? { ...item, quantity: item.quantity + 1 }
-            : item
+            : item,
         );
       }
       toast.success("Added to cart");
@@ -64,7 +64,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const updateQuantity = (id: number, quantity: number) => {
     if (quantity < 1) return;
     setItems((prev) =>
-      prev.map((item) => (item.id === id ? { ...item, quantity } : item))
+      prev.map((item) => (item.id === id ? { ...item, quantity } : item)),
     );
   };
 
@@ -74,7 +74,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const total = items.reduce(
     (acc, item) => acc + item.price * item.quantity,
-    0
+    0,
   );
   const itemCount = items.reduce((acc, item) => acc + item.quantity, 0);
 

@@ -13,7 +13,7 @@ const Footer = () => {
             <div className="flex items-center gap-2 mb-4">
               <Crown className="h-6 w-6 text-gold" />
               <h3 className="font-display text-xl font-bold text-foreground">
-                Dhee's Organic
+                Unique
               </h3>
             </div>
             <p className="text-sm text-muted-foreground mb-4">
@@ -38,7 +38,7 @@ const Footer = () => {
                 <Instagram className="h-4 w-4" />
               </a>
               <a
-                href="https://wa.me/27814437-4707"
+                href="https://wa.me/2347054405537"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-2 rounded-full bg-secondary hover:bg-primary/10 hover:text-primary transition-smooth"
@@ -93,20 +93,20 @@ const Footer = () => {
                 <Phone className="h-4 w-4 mt-0.5 text-primary" />
                 <div>
                   <a
-                    href="tel:0814437-4707"
+                    href="tel:07054405537"
                     className="hover:text-primary transition-smooth"
                   >
-                    0814 437 4707
+                    0705 440 5537
                   </a>
                 </div>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
                 <Mail className="h-4 w-4 mt-0.5 text-primary" />
                 <a
-                  href="mailto:info@dheesorganic.co.za"
+                  href="mailto:info@uniquehair.co.za"
                   className="hover:text-primary transition-smooth"
                 >
-                  info@dheesorganic.co.za
+                  info@uniquehair.co.za
                 </a>
               </li>
               <li className="flex items-start gap-2 text-muted-foreground">
@@ -125,9 +125,12 @@ const Footer = () => {
 
           {/* Royal Rewards */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Royal Rewards</h4>
+            <h4 className="font-semibold text-foreground mb-4">
+              Royal Rewards
+            </h4>
             <p className="text-sm text-muted-foreground mb-4">
-              Join our exclusive loyalty program and earn points on every purchase. Unlock special rewards and benefits.
+              Join our exclusive loyalty program and earn points on every
+              purchase. Unlock special rewards and benefits.
             </p>
             <Button asChild variant="hero" size="sm">
               <Link to="/loyalty">Join Now</Link>
@@ -157,8 +160,8 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-muted-foreground">
           <p>
-            © {new Date().getFullYear()} Dhee's Organic Hair Treatment. All
-            rights reserved.
+            © {new Date().getFullYear()} Unique Hair Treatment. All rights
+            reserved.
           </p>
           <div className="flex gap-6">
             <a href="#" className="hover:text-primary transition-smooth">

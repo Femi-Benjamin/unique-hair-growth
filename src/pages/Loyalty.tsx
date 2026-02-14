@@ -16,7 +16,7 @@ const Loyalty = () => {
     if (!email) return;
 
     toast.success(
-      "Welcome to Dhee's Royalty! We've sent a welcome gift to your email."
+      "Welcome to Unique Royalty! We've sent a welcome gift to your email.",
     );
     setEmail("");
   };

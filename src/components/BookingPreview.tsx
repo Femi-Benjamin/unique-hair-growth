@@ -104,8 +104,8 @@ const BookingPreview = () => {
                 variant="outline"
                 onClick={() =>
                   window.open(
-                    "https://wa.me/27814437-4707?text=Hi, I would like to book a consultation",
-                    "_blank"
+                    "https://wa.me/2347054405537?text=Hi, I would like to book a consultation",
+                    "_blank",
                   )
                 }
               >
@@ -120,9 +120,9 @@ const BookingPreview = () => {
               </Button>
               <Button
                 variant="outline"
-                onClick={() => (window.location.href = "tel:0814437-4707")}
+                onClick={() => (window.location.href = "tel:07054405537")}
               >
-                Call 0814 437 4707
+                Call 0705 440 5537
               </Button>
             </div>
           </div>
