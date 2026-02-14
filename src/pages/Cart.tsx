@@ -369,7 +369,7 @@ You will receive a confirmation email shortly.`);
               Cancel
             </Button>
             <Button
-              className="flex-1 bg-green-600 hover:bg-green-700"
+              className="flex-1 bg-primary hover:bg-primary/80"
               onClick={handlePayNow}
             >
               Pay ₦{total.toLocaleString()}
