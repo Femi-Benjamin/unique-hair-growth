@@ -19,11 +19,11 @@ const buttonVariants = cva(
         gold: "bg-gold text-accent-foreground hover:shadow-gold font-semibold",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        xl: "h-14 rounded-md px-10 text-base",
-        icon: "h-10 w-10",
+        default: "h-11 px-6 py-2.5 rounded-xl text-sm font-medium",
+        sm: "h-9 rounded-lg px-4 py-1.5 text-xs font-medium",
+        lg: "h-13 rounded-xl px-8 py-3.5 text-base font-semibold",
+        xl: "h-14 rounded-2xl px-10 py-4 text-base font-semibold",
+        icon: "h-10 w-10 rounded-xl",
       },
     },
     defaultVariants: {

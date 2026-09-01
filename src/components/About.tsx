@@ -1,76 +1,108 @@
-import { Crown, Leaf, ShieldCheck } from "lucide-react";
-import aboutImage from "@/assets/testimonial-woman.jpg"; // Reusing an existing image for now, user might want to swap
+import { Crown, CheckCircle2 } from "lucide-react";
+import { Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ScrollReveal } from "@/components/ui/ScrollAnimation";
+import { motion } from "motion/react";
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="py-20 bg-background relative overflow-hidden"
-    >
-      {/* Decorative background elements */}
-      <div className="absolute top-0 right-0 w-1/3 h-full bg-secondary/20 -skew-x-12 translate-x-1/2" />
+    <section id="about" className="py-20 bg-background relative overflow-hidden">
+      <div className="container mx-auto px-4 lg:px-8 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-12 items-center">
+          
+          {/* Left Visual Composition with ScrollReveal */}
+          <div className="lg:col-span-6 relative">
+            <ScrollReveal direction="right" delay={0.2}>
+              <div className="relative mx-auto max-w-md lg:max-w-none">
+                <div className="rounded-3xl overflow-hidden shadow-elegant border border-border bg-card p-3">
+                  <img
+                    src="https://images.unsplash.com/photo-1595476108010-b4d1f102b1b1?w=900&auto=format&fit=crop&q=80"
+                    alt="Natural Hair Crown & Trichology Botanical Therapy"
+                    referrerPolicy="no-referrer"
+                    className="w-full h-[460px] object-cover rounded-2xl"
+                  />
+                </div>
 
-      <div className="container mx-auto px-4 relative z-10">
-        <div className="grid md:grid-cols-2 gap-12 items-center">
-          <div className="order-2 md:order-1 relative">
-            <div className="relative z-10 rounded-2xl overflow-hidden shadow-2xl border-4 border-white/10">
-              <img
-                src={aboutImage}
-                alt="Unique Founder"
-                className="w-full h-auto object-cover"
-              />
-            </div>
-            {/* Decorative frame */}
-            <div className="absolute -top-4 -left-4 w-full h-full border-2 border-gold/30 rounded-2xl z-0" />
+                {/* Floating Stat Card */}
+                <motion.div
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: 0.4, duration: 0.5 }}
+                  className="absolute -bottom-6 -right-6 p-5 rounded-2xl bg-card border border-border shadow-xl space-y-1 hidden sm:block max-w-[210px]"
+                >
+                  <p className="font-serif text-3xl font-bold text-primary">100%</p>
+                  <p className="text-xs font-bold text-foreground">Plant-Powered</p>
+                  <p className="text-[11px] text-muted-foreground">Cold-pressed botanical actives with no chemical silicones.</p>
+                </motion.div>
+              </div>
+            </ScrollReveal>
           </div>
 
-          <div className="order-1 md:order-2">
-            <div className="flex items-center gap-2 mb-6">
-              <Crown className="text-gold w-8 h-8" />
-              <span className="text-gold font-bold tracking-wider uppercase text-sm">
-                Our Story
-              </span>
-            </div>
-
-            <h2 className="font-display text-4xl md:text-5xl font-bold mb-6 text-foreground">
-              Crafted for <span className="text-primary">Royalty</span>
-            </h2>
-
-            <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
-              <p>
-                At Unique Hair Treatment, we believe that your hair is your
-                crown and it deserves to be treated with the utmost respect and
-                care.
-              </p>
-              <p>
-                Founded with a passion for natural healing and organic beauty,
-                our journey began in a small kitchen with a big dream: to create
-                hair care solutions that are free from harsh chemicals and full
-                of nature's goodness.
-              </p>
-              <p>
-                Every bottle of our Growth Oil and Treatment Balm is
-                hand-blended using ethically sourced ingredients like Chebe
-                powder, Hemp seed oil, and essential vitamins that nourish your
-                scalp and strengthen your strands from root to tip.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-2 gap-6 mt-8">
-              <div className="flex flex-col gap-2">
-                <div className="bg-secondary/50 w-12 h-12 rounded-full flex items-center justify-center">
-                  <Leaf className="text-primary w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-foreground">100% Organic</h4>
+          {/* Right Content Column with ScrollReveal */}
+          <div className="lg:col-span-6 space-y-6">
+            <ScrollReveal direction="left" delay={0.1}>
+              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-secondary text-primary border border-primary/20 text-xs font-semibold">
+                <Crown className="w-3.5 h-3.5 text-accent" />
+                <span>Our Heritage & Philosophy</span>
               </div>
-              <div className="flex flex-col gap-2">
-                <div className="bg-secondary/50 w-12 h-12 rounded-full flex items-center justify-center">
-                  <ShieldCheck className="text-primary w-6 h-6" />
-                </div>
-                <h4 className="font-bold text-foreground">Quality Assured</h4>
+            </ScrollReveal>
+
+            <ScrollReveal direction="left" delay={0.2}>
+              <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
+                Honoring Your Crown With <span className="text-primary italic font-normal">Pure African Wisdom.</span>
+              </h2>
+            </ScrollReveal>
+
+            <ScrollReveal direction="left" delay={0.3}>
+              <div className="space-y-4 text-sm sm:text-base text-muted-foreground leading-relaxed">
+                <p>
+                  At Unique Hair Treatment, we believe natural hair is sacred royalty. Too often, commercial haircare is saturated with sulfates, drying alcohols, and petroleum fillers that provide synthetic shine while weakening cuticles over time.
+                </p>
+                <p>
+                  Our small-batch formulations combine ancient Chadian Chebe rituals, raw Nilotica Shea butter, and modern trichology science. Each drop is engineered to nourish the scalp microbiome, seal the cortex, and stimulate sustained length retention.
+                </p>
               </div>
-            </div>
+            </ScrollReveal>
+
+            {/* Value Pillars */}
+            <ScrollReveal direction="left" delay={0.4}>
+              <div className="grid sm:grid-cols-2 gap-4 pt-2">
+                <div className="p-4 rounded-xl bg-secondary/40 border border-border/70 space-y-1.5">
+                  <div className="flex items-center gap-2 text-foreground font-bold text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    Ethically Sourced
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Direct partnership with women-led farming cooperatives across Chad and Ghana.
+                  </p>
+                </div>
+
+                <div className="p-4 rounded-xl bg-secondary/40 border border-border/70 space-y-1.5">
+                  <div className="flex items-center gap-2 text-foreground font-bold text-sm">
+                    <CheckCircle2 className="w-4 h-4 text-primary" />
+                    Small-Batch Purity
+                  </div>
+                  <p className="text-xs text-muted-foreground">
+                    Freshly blended without parabens, mineral oils, or synthetic fragrance.
+                  </p>
+                </div>
+              </div>
+            </ScrollReveal>
+
+            <ScrollReveal direction="left" delay={0.5}>
+              <div className="pt-3 flex flex-wrap gap-4">
+                <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-3.5 shadow-glow font-semibold">
+                  <Link to="/products">Explore Formulations</Link>
+                </Button>
+                <Button variant="outline" size="lg" asChild className="border-2 border-primary/40 text-foreground hover:bg-secondary/70 rounded-full px-8 py-3.5 font-semibold">
+                  <Link to="/booking">Book a Scalp Diagnostic</Link>
+                </Button>
+              </div>
+            </ScrollReveal>
+
           </div>
+
         </div>
       </div>
     </section>

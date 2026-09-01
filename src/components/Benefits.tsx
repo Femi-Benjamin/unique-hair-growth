@@ -1,55 +1,67 @@
-import { Sprout, TrendingUp, Scissors, Shield, Leaf } from "lucide-react";
+import { Sprout, TrendingUp, ShieldCheck, Leaf, Droplets } from "lucide-react";
+import { ScrollReveal, StaggerContainer, StaggerItem } from "@/components/ui/ScrollAnimation";
+import { motion } from "motion/react";
 
 const benefits = [
   {
     icon: Sprout,
-    title: "Nourishes & Strengthens",
-    description: "Deep conditioning with natural oils"
+    title: "Awakens Dormant Roots",
+    description: "Cold-pressed rosemary & Chebe stimulate micro-circulation to dormant hair follicles."
+  },
+  {
+    icon: Droplets,
+    title: "Multi-Layer Hydration",
+    description: "Deep-penetrating plant lipids prevent water evaporation for up to 5 consecutive days."
+  },
+  {
+    icon: ShieldCheck,
+    title: "78% Less Shedding",
+    description: "Strengthens the hair cortex against mechanical breakage and protective style tension."
   },
   {
     icon: TrendingUp,
-    title: "Promotes Growth",
-    description: "Stimulates healthy hair growth"
-  },
-  {
-    icon: Scissors,
-    title: "Repairs Split Ends",
-    description: "Restores damaged hair structure"
-  },
-  {
-    icon: Shield,
-    title: "Reduces Breakage",
-    description: "Strengthens hair from root to tip"
+    title: "Edge & Crown Revival",
+    description: "Targeted botanical pomades nourish thinning temples and restore fragile baby hairs."
   },
   {
     icon: Leaf,
-    title: "Chemical-Free",
-    description: "100% natural plant-based formula"
+    title: "100% Chemical-Free",
+    description: "Zero sulfates, parabens, phthalates, mineral oils, or synthetic drying alcohols."
   }
 ];
 
 const Benefits = () => {
   return (
-    <section className="py-16 bg-secondary/30">
-      <div className="container mx-auto px-4">
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+    <section className="py-16 bg-secondary/40 border-y border-border/60">
+      <div className="container mx-auto px-4 lg:px-8">
+        <ScrollReveal direction="down" className="text-center max-w-2xl mx-auto mb-10">
+          <span className="text-xs font-bold uppercase tracking-wider text-accent">Pure Botanical Science</span>
+          <h2 className="font-serif text-2xl sm:text-3xl font-bold text-foreground mt-1">
+            Engineered for Visible Density & Slip
+          </h2>
+        </ScrollReveal>
+
+        <StaggerContainer className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
           {benefits.map((benefit, index) => (
-            <div 
-              key={index}
-              className="flex flex-col items-center text-center p-6 rounded-lg bg-card/50 border border-border/50 hover:border-primary/50 hover:shadow-glow transition-smooth group"
-            >
-              <div className="mb-4 p-4 rounded-full bg-primary/10 group-hover:bg-primary/20 transition-smooth">
-                <benefit.icon className="h-8 w-8 text-primary" />
-              </div>
-              <h3 className="font-semibold text-foreground mb-2">
-                {benefit.title}
-              </h3>
-              <p className="text-sm text-muted-foreground">
-                {benefit.description}
-              </p>
-            </div>
+            <StaggerItem key={index}>
+              <motion.div
+                whileHover={{ y: -5 }}
+                transition={{ duration: 0.2 }}
+                className="flex flex-col items-center text-center p-6 rounded-2xl bg-card border border-border/80 hover:border-primary/40 hover:shadow-elegant transition-smooth group h-full"
+              >
+                <div className="mb-4 p-3.5 rounded-2xl bg-secondary text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-smooth">
+                  <benefit.icon className="h-6 w-6" />
+                </div>
+                <h3 className="font-serif text-lg font-bold text-foreground mb-2">
+                  {benefit.title}
+                </h3>
+                <p className="text-xs text-muted-foreground leading-relaxed">
+                  {benefit.description}
+                </p>
+              </motion.div>
+            </StaggerItem>
           ))}
-        </div>
+        </StaggerContainer>
       </div>
     </section>
   );

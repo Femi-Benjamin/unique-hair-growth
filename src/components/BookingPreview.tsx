@@ -1,131 +1,139 @@
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calendar, Video, MapPin } from "lucide-react";
+import { Card } from "@/components/ui/card";
+import { Calendar, Video, MapPin, Sparkles, CheckCircle2 } from "lucide-react";
 import { Link } from "react-router-dom";
+import { ScrollReveal } from "@/components/ui/ScrollAnimation";
+import { motion } from "motion/react";
 
 const BookingPreview = () => {
   return (
-    <section id="booking" className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="font-display text-4xl md:text-5xl font-bold text-foreground mb-4">
-              Book Your Consultation
-            </h2>
-            <p className="text-lg text-muted-foreground">
-              Get personalized hair care advice from our experts
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-8">
-            {/* In-Salon Booking */}
-            <Card className="bg-gradient-card border-primary/50 hover:shadow-glow transition-smooth">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <MapPin className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">In-Salon</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  Visit our salon for a comprehensive hair assessment and
-                  treatment
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Full hair and scalp analysis</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Personalized treatment plan</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Complimentary scalp massage</span>
-                  </li>
-                </ul>
-                <Button asChild variant="hero" className="w-full">
-                  <Link to="/booking">
-                    <Calendar className="h-4 w-4 mr-2" />
-                    Book In-Salon
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-
-            {/* Online Booking */}
-            <Card className="bg-gradient-card border-primary/50 hover:shadow-glow transition-smooth">
-              <CardHeader>
-                <div className="flex items-center gap-3 mb-2">
-                  <div className="p-3 rounded-full bg-primary/10">
-                    <Video className="h-6 w-6 text-primary" />
-                  </div>
-                  <CardTitle className="text-2xl">Online</CardTitle>
-                </div>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <p className="text-muted-foreground">
-                  Connect with our experts via video call from anywhere
-                </p>
-                <ul className="space-y-2">
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Convenient video consultation</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Product recommendations</span>
-                  </li>
-                  <li className="flex items-center gap-2 text-sm">
-                    <div className="h-1.5 w-1.5 rounded-full bg-primary"></div>
-                    <span>Follow-up support via WhatsApp</span>
-                  </li>
-                </ul>
-                <Button asChild variant="outline" className="w-full">
-                  <Link to="/booking">
-                    <Video className="h-4 w-4 mr-2" />
-                    Book Online
-                  </Link>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Quick Contact */}
-          <div className="mt-12 text-center">
-            <p className="text-muted-foreground mb-4">
-              Prefer to speak with us directly?
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Button
-                variant="outline"
-                onClick={() =>
-                  window.open(
-                    "https://wa.me/2347054405537?text=Hi, I would like to book a consultation",
-                    "_blank",
-                  )
-                }
-              >
-                <svg
-                  className="h-4 w-4 mr-2"
-                  fill="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" />
-                </svg>
-                WhatsApp Us
-              </Button>
-              <Button
-                variant="outline"
-                onClick={() => (window.location.href = "tel:07054405537")}
-              >
-                Call 0705 440 5537
-              </Button>
+    <section id="booking" className="py-16 md:py-24 bg-background overflow-hidden">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-5xl mx-auto space-y-10 md:space-y-12">
+          
+          <ScrollReveal direction="up" className="text-center space-y-3">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-secondary text-primary">
+              <Sparkles className="w-3.5 h-3.5 text-accent" />
+              <span>Expert Trichology Care</span>
             </div>
+            <h2 className="font-serif text-3xl md:text-5xl font-bold text-foreground">
+              Book Your Scalp & Hair Consultation
+            </h2>
+            <p className="text-sm md:text-base text-muted-foreground max-w-xl mx-auto">
+              Whether visiting our steam bar salon in person or consulting one-on-one virtually, get clinical analysis and a tailored 90-day growth regimen.
+            </p>
+          </ScrollReveal>
+
+          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
+            {/* In-Salon Diagnostic */}
+            <ScrollReveal direction="up" delay={0.1}>
+              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.25 }} className="h-full">
+                <Card className="bg-card border-border hover:border-primary/50 transition-smooth shadow-elegant rounded-3xl overflow-hidden p-6 sm:p-8 flex flex-col justify-between h-full">
+                  <div className="space-y-6">
+                    <div className="flex items-start justify-between">
+                      <div className="p-3.5 rounded-2xl bg-secondary text-primary">
+                        <MapPin className="h-6 w-6" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
+                        Flagship Salon
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
+                        In-Salon Trichology Detox
+                      </h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        Experience deep micro-mist ozone steaming, 200x digital scalp scope diagnostic, and relaxing herbal clay therapy.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2.5 pt-2">
+                      {[
+                        "200x Digital Scalp & Follicle Analysis",
+                        "Herbal Chebe & Clay Detoxification",
+                        "Ozone Micro-Mist Hydration Steam",
+                        "Lymphatic Scalp Tension Relief Massage",
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-6 sm:pt-8 mt-6 border-t border-border flex items-center justify-between gap-4">
+                    <div>
+                      <span className="text-xs text-muted-foreground block">Starting from</span>
+                      <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">₦18,000</span>
+                    </div>
+                    <Button asChild size="lg" className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-6 sm:px-7 py-3 shadow-glow font-semibold text-sm">
+                      <Link to="/booking" className="flex items-center gap-1.5">
+                        <Calendar className="w-4 h-4 mr-1" />
+                        Book In-Salon
+                      </Link>
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            </ScrollReveal>
+
+            {/* Virtual Consultation */}
+            <ScrollReveal direction="up" delay={0.2}>
+              <motion.div whileHover={{ y: -6 }} transition={{ duration: 0.25 }} className="h-full">
+                <Card className="bg-card border-border hover:border-primary/50 transition-smooth shadow-elegant rounded-3xl overflow-hidden p-6 sm:p-8 flex flex-col justify-between h-full">
+                  <div className="space-y-6">
+                    <div className="flex items-start justify-between">
+                      <div className="p-3.5 rounded-2xl bg-secondary text-primary">
+                        <Video className="h-6 w-6" />
+                      </div>
+                      <span className="text-xs font-bold uppercase tracking-wider text-accent bg-accent/10 px-3 py-1 rounded-full">
+                        Worldwide Virtual
+                      </span>
+                    </div>
+
+                    <div>
+                      <h3 className="font-serif text-2xl font-bold text-foreground mb-2">
+                        Virtual Trichology Session
+                      </h3>
+                      <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
+                        Connect 1-on-1 via private HD video with our certified hair specialist from anywhere in the world.
+                      </p>
+                    </div>
+
+                    <div className="space-y-2.5 pt-2">
+                      {[
+                        "Complete 45-min Video Hair Assessment",
+                        "Ingredient audit of your existing products",
+                        "Custom 90-Day Step-by-Step Regimen PDF",
+                        "30-day dedicated WhatsApp specialist support",
+                      ].map((item, idx) => (
+                        <div key={idx} className="flex items-center gap-2.5 text-xs sm:text-sm text-foreground">
+                          <CheckCircle2 className="w-4 h-4 text-primary flex-shrink-0" />
+                          <span>{item}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="pt-6 sm:pt-8 mt-6 border-t border-border flex items-center justify-between gap-4">
+                    <div>
+                      <span className="text-xs text-muted-foreground block">Session Fee</span>
+                      <span className="font-serif text-2xl sm:text-3xl font-bold text-primary">₦12,000</span>
+                    </div>
+                    <Button asChild variant="outline" size="lg" className="border-2 border-primary/40 text-foreground hover:bg-secondary/70 rounded-full px-6 sm:px-7 py-3 font-semibold text-sm">
+                      <Link to="/booking" className="flex items-center gap-1.5">
+                        <Video className="w-4 h-4 mr-1" />
+                        Book Virtual Call
+                      </Link>
+                    </Button>
+                  </div>
+                </Card>
+              </motion.div>
+            </ScrollReveal>
           </div>
+
         </div>
       </div>
     </section>

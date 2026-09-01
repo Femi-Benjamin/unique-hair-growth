@@ -1,30 +1,36 @@
 import { createContext } from "react";
 
-export type CartItem = {
+export interface CartItem {
   id: number;
   name: string;
-  price: number; // Storing as number for calculation
+  price: number; // Storing as numeric NGN
+  priceDisplay?: string;
   image: string;
   quantity: number;
-};
+  size?: string;
+}
 
-// Define a proper type for the product parameter
-export type Product = {
+export interface Product {
   id: number;
   name: string;
   price: string | number;
+  priceDisplay?: string;
   image: string;
   quantity?: number;
-};
+  size?: string;
+  category?: string;
+}
 
-export type CartContextType = {
+export interface CartContextType {
   items: CartItem[];
-  addToCart: (product: Product) => void;
+  addToCart: (product: Product, quantity?: number) => void;
   removeFromCart: (id: number) => void;
   updateQuantity: (id: number, quantity: number) => void;
   clearCart: () => void;
   total: number;
   itemCount: number;
-};
+  isCartOpen: boolean;
+  setIsCartOpen: (open: boolean) => void;
+}
 
 export const CartContext = createContext<CartContextType | undefined>(undefined);

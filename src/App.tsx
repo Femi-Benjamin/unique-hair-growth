@@ -5,7 +5,6 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
-
 import Products from "./pages/Products";
 import ProductDetails from "./pages/ProductDetails";
 import Cart from "./pages/Cart";
@@ -13,18 +12,22 @@ import Booking from "./pages/Booking";
 import Resources from "./pages/Resources";
 import Loyalty from "./pages/Loyalty";
 import { CartProvider } from "@/context/CartContext";
+import { CartDrawer } from "@/components/CartDrawer";
 
 const queryClient = new QueryClient();
-
-import WhatsAppButton from "@/components/WhatsAppButton";
 
 const App = () => (
   <QueryClientProvider client={queryClient}>
     <TooltipProvider>
       <Toaster />
-      <Sonner />
+      <Sonner position="top-right" expand={true} />
       <CartProvider>
-        <BrowserRouter>
+        <BrowserRouter
+          future={{
+            v7_startTransition: true,
+            v7_relativeSplatPath: true,
+          }}
+        >
           <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/products" element={<Products />} />
@@ -35,7 +38,7 @@ const App = () => (
             <Route path="/loyalty" element={<Loyalty />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-          <WhatsAppButton />
+          <CartDrawer />
         </BrowserRouter>
       </CartProvider>
     </TooltipProvider>

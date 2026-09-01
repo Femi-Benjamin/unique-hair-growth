@@ -6,10 +6,11 @@ export type { CartItem, Product } from "./CartDefs";
 
 export const CartProvider = ({ children }: { children: React.ReactNode }) => {
   const [items, setItems] = useState<CartItem[]>([]);
+  const [isCartOpen, setIsCartOpen] = useState(false);
 
   // Load from local storage on mount
   useEffect(() => {
-    const savedCart = localStorage.getItem("unique-cart");
+    const savedCart = localStorage.getItem("unique-cart-v2");
     if (savedCart) {
       try {
         setItems(JSON.parse(savedCart));
@@ -21,36 +22,40 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   // Save to local storage on change
   useEffect(() => {
-    localStorage.setItem("unique-cart", JSON.stringify(items));
+    localStorage.setItem("unique-cart-v2", JSON.stringify(items));
   }, [items]);
 
-  const addToCart = (product: Product) => {
+  const addToCart = (product: Product, qtyToAdd: number = 1) => {
     setItems((prev) => {
       const existing = prev.find((item) => item.id === product.id);
-      // Parse price if it's a string like "N 5,000" -> 5000
-      // Assuming price is coming as string from data.ts e.g. "N 250"
-      const numericPrice =
-        typeof product.price === "string"
-          ? parseFloat(product.price.replace(/[^0-9.]/g, ""))
-          : product.price;
+      
+      let numericPrice = 0;
+      if (typeof product.price === "number") {
+        numericPrice = product.price;
+      } else if (typeof product.price === "string") {
+        numericPrice = parseFloat(product.price.replace(/[^0-9.]/g, "")) || 0;
+      }
 
       if (existing) {
-        toast.success("Item quantity updated");
+        toast.success(`Updated "${product.name}" quantity (${existing.quantity + qtyToAdd})`);
         return prev.map((item) =>
           item.id === product.id
-            ? { ...item, quantity: item.quantity + 1 }
+            ? { ...item, quantity: item.quantity + qtyToAdd }
             : item,
         );
       }
-      toast.success("Added to cart");
+      
+      toast.success(`Added "${product.name}" to cart`);
       return [
         ...prev,
         {
           id: product.id,
           name: product.name,
           price: numericPrice,
+          priceDisplay: product.priceDisplay || `₦${numericPrice.toLocaleString()}`,
           image: product.image,
-          quantity: 1,
+          quantity: qtyToAdd,
+          size: product.size || "Standard",
         },
       ];
     });
@@ -58,11 +63,14 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
 
   const removeFromCart = (id: number) => {
     setItems((prev) => prev.filter((item) => item.id !== id));
-    toast.info("Item removed from cart");
+    toast.info("Item removed from bag");
   };
 
   const updateQuantity = (id: number, quantity: number) => {
-    if (quantity < 1) return;
+    if (quantity < 1) {
+      removeFromCart(id);
+      return;
+    }
     setItems((prev) =>
       prev.map((item) => (item.id === id ? { ...item, quantity } : item)),
     );
@@ -76,6 +84,7 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
     (acc, item) => acc + item.price * item.quantity,
     0,
   );
+  
   const itemCount = items.reduce((acc, item) => acc + item.quantity, 0);
 
   return (
@@ -88,6 +97,8 @@ export const CartProvider = ({ children }: { children: React.ReactNode }) => {
         clearCart,
         total,
         itemCount,
+        isCartOpen,
+        setIsCartOpen,
       }}
     >
       {children}

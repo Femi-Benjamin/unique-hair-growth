@@ -8,52 +8,53 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Premium Plum / Rose Gold / Warm Cream Theme */
-    --background: 30 25% 97%;        /* Warm ivory/cream */
-    --foreground: 280 25% 18%;       /* Deep plum for text */
+    /* Luxury Botanical & Warm Gold Heritage Palette */
+    --background: 40 33% 98%;          /* #faf7f2 - Silk Warm Cream */
+    --foreground: 165 42% 14%;         /* #143328 - Deep Forest Night text */
 
-    --card: 30 20% 99%;              /* Near-white with warmth */
-    --card-foreground: 280 25% 18%;
+    --card: 0 0% 100%;                 /* Pure Crisp Ivory-White */
+    --card-foreground: 165 42% 14%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 280 25% 18%;
+    --popover-foreground: 165 42% 14%;
 
-    --primary: 280 35% 42%;          /* Rich plum/purple */
-    --primary-foreground: 0 0% 100%;
+    --primary: 164 52% 23%;            /* #1c5943 - Regal Deep Emerald Green */
+    --primary-foreground: 45 40% 98%;
 
-    --secondary: 280 15% 93%;        /* Subtle lavender tint */
-    --secondary-foreground: 280 25% 18%;
+    --secondary: 155 25% 94%;          /* Soft sage/mint wash */
+    --secondary-foreground: 164 52% 20%;
 
-    --muted: 280 8% 94%;
-    --muted-foreground: 280 10% 45%;
+    --muted: 40 20% 94%;
+    --muted-foreground: 160 12% 42%;
 
-    --accent: 15 55% 60%;            /* Rose gold accent */
-    --accent-foreground: 0 0% 100%;
+    --accent: 38 78% 52%;              /* #e39d25 - Radiant Warm Gold */
+    --accent-foreground: 165 42% 12%;
 
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 280 12% 90%;
-    --input: 280 12% 90%;
-    --ring: 280 35% 42%;
+    --border: 160 15% 88%;
+    --input: 160 15% 88%;
+    --ring: 164 52% 23%;
 
     --radius: 0.75rem;
 
-    /* Custom theme colors — token names kept for Tailwind compatibility */
-    --royal-gold: 15 55% 60%;        /* Rose gold */
-    --organic-green: 280 35% 42%;    /* Maps to primary plum */
-    --deep-charcoal: 280 25% 18%;    /* Deep plum (used as dark bg) */
-    --soft-cream: 30 25% 97%;        /* Warm cream */
+    /* Custom theme colors for tailwind compatibility */
+    --royal-gold: 38 78% 52%;          /* Warm Antique Gold */
+    --organic-green: 164 52% 23%;      /* Deep Emerald */
+    --deep-charcoal: 165 45% 12%;      /* Obsidian Forest */
+    --soft-cream: 40 33% 98%;          /* Silk Cream */
     
     /* Gradients */
-    --gradient-hero: linear-gradient(135deg, hsl(280 20% 95%) 0%, hsl(280 15% 90%) 100%);
-    --gradient-card: linear-gradient(180deg, hsl(30 20% 99%) 0%, hsl(280 10% 97%) 100%);
-    --gradient-accent: linear-gradient(90deg, hsl(280 35% 42%) 0%, hsl(280 30% 52%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(40 35% 97%) 0%, hsl(155 30% 95%) 50%, hsl(40 40% 96%) 100%);
+    --gradient-card: linear-gradient(180deg, hsl(0 0% 100%) 0%, hsl(40 30% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(164 52% 23%) 0%, hsl(164 48% 30%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 78% 52%) 0%, hsl(45 88% 58%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(280 35% 42% / 0.15);
-    --shadow-elegant: 0 10px 40px hsl(280 25% 18% / 0.08);
-    --shadow-gold: 0 0 30px hsl(15 55% 60% / 0.2);
+    --shadow-glow: 0 10px 30px -10px hsl(164 52% 23% / 0.25);
+    --shadow-elegant: 0 12px 36px -8px hsl(165 45% 12% / 0.08);
+    --shadow-gold: 0 10px 28px -6px hsl(38 78% 52% / 0.35);
     
     /* Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -75,7 +76,11 @@ html::-webkit-scrollbar {
   display: none;
 }
 
-body,
 html {
   scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: clip;
+  min-height: 100vh;
 }
